@@ -5,10 +5,10 @@ export const CatGalleryFetch = () => {
   // Estado para almacenar las imágenes de gatitos, lo inicializamos con un array vacío
   const [cats, setCats] = useState([]);
   
-  // Estado para manejar posibles errores
+  // Estado para manejar errores
   const [error, setError] = useState(null);
 
-  // Estado para llevar la cuenta de cuántos gatos se han cargado
+  // Estado para llevar la cuenta de cuántos gatos se cargan
   const [page, setPage] = useState(1);
 
   // Método para realizar la petición a la API con fetch
@@ -16,7 +16,7 @@ export const CatGalleryFetch = () => {
     try {
       const response = await fetch(`https://api.thecatapi.com/v1/images/search?limit=10&page=${page}&order=DESC`);
 
-      // Convertimos la respuesta a formato JSON
+      //  Respuesta a formato JSON
       const data = await response.json();
 
       if (loadMore) {
